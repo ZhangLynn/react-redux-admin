@@ -9,6 +9,7 @@ import {
 import MyLayout from '../layout/layout'
 import TableDemo from '../testComponent/tableDemo'
 import FormDemo from '../testComponent/formDemo'
+import TodoApp from '../pages/todoapp'
 
 const page404 = ()=>(
     <div>404</div>
@@ -26,8 +27,8 @@ class Routes extends Component {
                     <Route path="/" render={({history,location}) => (
                         <MyLayout history={history} location={location}>
                             <Switch>
-                                <Route path="/" exact component={TableDemo}/>
-                                <Route path="/tableDemo"  component={TableDemo}/>
+                                <Route path="/" exact component={TodoApp}/>
+                                <Route path="/tableDemo"  component={TodoApp}/>
                                 <Route path="/formDemo"  component={FormDemo}/>
                                 <Redirect to='/404'/>
                             </Switch>
