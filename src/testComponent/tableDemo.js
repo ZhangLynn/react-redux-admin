@@ -1,8 +1,3 @@
-/**
- * 创建人：lil
- * 创建时间：2017/12/29
- * 描述：
- */
 import React, {Component} from 'react'
 import { Table, Icon } from 'antd';
 
