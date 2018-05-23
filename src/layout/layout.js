@@ -6,16 +6,27 @@ const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 
 export default class MyLayout extends Component{
+    state = {
+        collapsed: false,
+    };
+    onCollapse = (collapsed) => {
+        console.log(collapsed);
+        this.setState({ collapsed });
+    }
     render(){
         return(
-            <Layout style={{height:"100%"}}>
-                <Sider>
+            <Layout style={{ minHeight: '100vh' }}>
+                <Sider
+                    collapsible
+                    collapsed={this.state.collapsed}
+                    onCollapse={this.onCollapse}
+                >
                     <Menu theme="dark"
                           openKeys={["sub1"]}
                           mode="inline">
                         <SubMenu key="sub1" title={<span><span>菜单栏</span></span>}>
+                            <Menu.Item key="formDemo"><Link to='/todoApp'>TodoApp</Link></Menu.Item>
                             <Menu.Item key="tableDemo"><Link to='/tableDemo'>Table</Link></Menu.Item>
-                            <Menu.Item key="formDemo"><Link to='/formDemo'>Form</Link></Menu.Item>
                         </SubMenu>
                     </Menu>
                 </Sider>

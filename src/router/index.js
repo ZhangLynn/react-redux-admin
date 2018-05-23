@@ -6,11 +6,11 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom'
-import MyLayout from '../layout/layout'
-import TableDemo from '../testComponent/tableDemo'
+import MyLayout from 'bundle-loader?lazy&name=[name]!../layout/layout'
+import TableDemo from 'bundle-loader?lazy&name=[name]!../testComponent/tableDemo'
+import TodoApp from 'bundle-loader?lazy&name=[name]!../pages/todoapp';
 import FormDemo from '../testComponent/formDemo'
-import TodoApp from '../pages/todoapp'
-
+import createRouterComponent from '../utils/async/createRouterComponent';
 const page404 = ()=>(
     <div>404</div>
 )
@@ -27,9 +27,9 @@ class Routes extends Component {
                     <Route path="/" render={({history,location}) => (
                         <MyLayout history={history} location={location}>
                             <Switch>
-                                <Route path="/" exact component={TodoApp}/>
-                                <Route path="/tableDemo"  component={TodoApp}/>
-                                <Route path="/formDemo"  component={FormDemo}/>
+                                <Route path="/" exact component={createRouterComponent(TodoApp)}/>
+                                <Route path="/todoApp"  component={createRouterComponent(TodoApp)}/>
+                                <Route path="/tableDemo"  component={TableDemo}/>
                                 <Redirect to='/404'/>
                             </Switch>
                         </MyLayout>
