@@ -1,17 +1,9 @@
 import React,{Component} from 'react';
 import { Menu,Layout } from 'antd';
 import {Link} from 'react-router-dom';
-import TableDemo from 'bundle-loader?lazy&name=[name]!../testComponent/tableDemo'
-import TodoApp from 'bundle-loader?lazy&name=[name]!../pages/todoapp';
-import FormDemo from '../testComponent/formDemo'
-import lazyLoad from '../utils/lazyLoad/lazyLoad';
-import {
-    Route,
-    Switch
-} from 'react-router-dom';
 import style from './layout.less'
-const SubMenu = Menu.SubMenu;
 const { Header, Content, Footer, Sider } = Layout;
+const SubMenu = Menu.SubMenu;
 
 export default class MyLayout extends Component{
     state = {
@@ -39,11 +31,7 @@ export default class MyLayout extends Component{
                     </Menu>
                 </Sider>
                 <Layout>
-                    <Switch>
-                        <Route exact path="/" component={lazyLoad(TodoApp)} />
-                        <Route exact path="/todoApp" component={lazyLoad(TodoApp)} />
-                        <Route path="/tableDemo" component={lazyLoad(TableDemo)} />
-                    </Switch>
+                    <div className={style.red}>{this.props.children}</div>
                 </Layout>
             </Layout>
         )
