@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import { Menu,Layout } from 'antd';
 import {Link} from 'react-router-dom';
-import style from './layout.less'
+import style from './BasicLayout.less'
 const { Header, Content, Footer, Sider } = Layout;
 const SubMenu = Menu.SubMenu;
 

@@ -11,7 +11,7 @@ import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 //路由的按需加载
 import lazyLoad from './utils/lazyLoad/lazyLoad';
-import MyLayout from 'bundle-loader?lazy&name=[name]!./layout/layout'
+import BasicLayout from 'bundle-loader?lazy&name=[name]!./layouts/BasicLayout'
 const page404 = ()=>(
     <div>404</div>
 )
@@ -27,11 +27,11 @@ class Router extends Component {
                     <Switch>
                         <Route path="/login"  component={login}/>
                         <Route path='/404' component={page404}/>
-                        <Route path="/"  component={lazyLoad(MyLayout)}/>
+                        <Route path="/"  component={lazyLoad(BasicLayout)}/>
                     </Switch>
                 </BrowserRouter>
             </LocaleProvider>
         )
     }
 }
-export default Routes
+export default Router

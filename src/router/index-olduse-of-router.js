@@ -6,7 +6,7 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom'
-import MyLayout from '../layout/layout'
+import MyLayout from '../layouts/BasicLayout'
 import TableDemo from '../testComponent/tableDemo'
 import TodoApp from '../pages/todoapp';
 import FormDemo from '../testComponent/formDemo'
