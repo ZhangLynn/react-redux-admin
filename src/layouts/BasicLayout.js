@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Menu, Layout} from 'antd';
+import {Layout} from 'antd';
 import {Link} from 'react-router-dom';
 import SiderMenu from '../components/SiderMenu'
 import TableDemo from 'bundle-loader?lazy&name=[name]!../testComponent/tableDemo'
@@ -11,18 +11,14 @@ import {
     Switch
 } from 'react-router-dom';
 import style from './BasicLayout.less'
-
-const SubMenu = Menu.SubMenu;
-const {Sider} = Layout;
-
+import singleMenuData from '../menu/singleMenu'
 export default class BasicLayout extends Component {
-
-
-
     render() {
         return (
             <Layout style={{minHeight: '100vh'}}>
-                <SiderMenu/>
+                <SiderMenu
+                    menuData={singleMenuData}
+                />
                 <Layout>
                     <Switch>
                         <Route exact path="/" component={lazyLoad(TodoApp)}/>
