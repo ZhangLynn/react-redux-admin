@@ -1,21 +1,15 @@
 import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO} from './actionTypes.js';
-
+import {createAction} from 'redux-actions'
 let nextTodoId = 0;
 
-export const addTodo = (text) => ({
-  type: ADD_TODO,
-  completed: false,
-  id: nextTodoId ++,
-  text: text
-});
+export const addTodo = createAction(ADD_TODO,text=>({
+    completed: false,
+    id: nextTodoId ++,
+    text: text
+}))
 
-export const toggleTodo = (id) => ({
-  type: TOGGLE_TODO,
-  id: id
-});
+export const toggleTodo = createAction(TOGGLE_TODO,id=>({id}))
 
-export const removeTodo = (id) => ({
-  type: REMOVE_TODO,
-  id: id
-});
+export const removeTodo=createAction(REMOVE_TODO,id=>({id}))
+
 
