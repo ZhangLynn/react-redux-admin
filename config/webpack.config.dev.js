@@ -152,8 +152,6 @@ module.exports = {
                                 ['import', {libraryName: 'antd', style: 'css'}],
                                 // 改动: 引入样式为 less
                                 //  ['import', { libraryName: 'antd', style: true }],
-                                // 引入热更新
-                                'react-hot-loader/babel'
                             ],
                             // This is a feature of `babel-loader` for webpack (not Babel itself).
                             // It enables caching results in ./node_modules/.cache/babel-loader/
