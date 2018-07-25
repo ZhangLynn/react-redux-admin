@@ -62,7 +62,8 @@
   },
   "devDependencies": {
     "less": "^3.0.1",
-    "less-loader": "^4.1.0"
+    "less-loader": "^4.1.0",
+    "react-hot-loader": "^4.3.3"
   },
   "jest": {
     "collectCoverageFrom": [
