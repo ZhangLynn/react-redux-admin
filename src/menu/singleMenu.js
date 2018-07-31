@@ -7,6 +7,11 @@ const singleMenuData=[
         path:'/',
         icon:'user',
         authority:'admin'
+    }, {
+        name:'table',
+        path:'/tableDemo',
+        icon:'user',
+        authority:'admin'
     }
 ];
 
