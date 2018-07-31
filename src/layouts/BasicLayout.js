@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
-import {Layout} from 'antd';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Layout } from 'antd';
 import SiderMenu from '../components/SiderMenu'
-import TableDemo from 'bundle-loader?lazy&name=[name]!../testComponent/tableDemo'
-import TodoApp from 'bundle-loader?lazy&name=[name]!../pages/todoapp';
-import FormDemo from '../testComponent/formDemo'
-import lazyLoad from '../utils/lazyLoad/lazyLoad';
+import AsyncComponent from '../utils/AsyncLoad/AsyncComponent';
+const TodoApp = AsyncComponent(() => import("../pages/todoapp"));
+const TableDemo = AsyncComponent(() => import("../testComponent/tableDemo"));
 import {
     Route,
     Switch
@@ -21,9 +19,9 @@ export default class BasicLayout extends Component {
                 />
                 <Layout>
                     <Switch>
-                        <Route exact path="/" component={lazyLoad(TodoApp)}/>
-                        <Route exact path="/todoApp" component={lazyLoad(TodoApp)}/>
-                        <Route path="/tableDemo" component={lazyLoad(TableDemo)}/>
+                        <Route exact path="/" component={TodoApp}/>
+                        <Route exact path="/todoApp" component={TodoApp}/>
+                        <Route path="/tableDemo" component={TableDemo}/>
                     </Switch>
                 </Layout>
             </Layout>
