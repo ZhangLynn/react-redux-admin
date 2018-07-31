@@ -1,5 +1,5 @@
 .todos {
-  width: 500px;
+  width: 450px;
   font-size: 30px;
 }
 
@@ -9,7 +9,7 @@
 
 .add-todo .new-todo {
   display: block;
-  margin: 0 0 0 50px;
+  margin: 0 0 0 10px;
   font-size: 30px;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -58,7 +58,7 @@
 }
 
 .todo-item .text {
-  margin: 0 0 0 50px;
+  margin: 0 0 0 10px;
   height: 40px;
 }
 
