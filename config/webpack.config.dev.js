@@ -108,7 +108,7 @@ module.exports = {
 
             // First, run the linter.
             // It's important to do this before Babel processes the JS.
-            //@Lynn 暂时注释eslint提醒
+            //TODO @Lynn 暂时注释eslint提醒 可以自行开启
             // {
             //   test: /\.(js|jsx|mjs)$/,
             //   enforce: 'pre',
@@ -141,7 +141,7 @@ module.exports = {
                         },
                     },
                     // Process JS with Babel.
-                    //@Lynn 这里是设置antd样式生效的关键
+                    //TODO @Lynn 这里是设置antd样式生效的关键
                     {
                         test: /\.(js|jsx|mjs)$/,
                         include: paths.appSrc,
@@ -164,7 +164,7 @@ module.exports = {
                     // "style" loader turns CSS into JS modules that inject <style> tags.
                     // In production, we use a plugin to extract that CSS to a file, but
                     // in development "style" loader enables hot editing of CSS.
-                    //@Lynn 这里设置css开启modules支持,node_modules和antd里面的css不开启
+                    //TODO @Lynn 这里设置css开启modules支持,node_modules和antd里面的css不开启
                     {
                         test: /\.css$/,
                         exclude: /node_modules|antd\.css/,
@@ -174,8 +174,9 @@ module.exports = {
                                 loader: require.resolve('css-loader'),
                                 options: {
                                     importLoaders: 1,
-                                    // 改动
-                                    modules: true,   // 新增对css modules的支持
+                                    // TODO  配置对css modules的支持
+                                    // 如果不想开启CSS的module功能 注释下面一段代码即可
+                                    // modules: true,
                                     localIdentName: '[name]__[local]__[hash:base64:5]', //
                                 },
                             },
@@ -201,7 +202,7 @@ module.exports = {
                             },
                         ],
                     },
-                    //@Lynn 然后针对node_modules和antd里面的css写编译配置
+                    //TODO @Lynn 然后针对node_modules和antd里面的css写编译配置
                     {
                         test: /\.css$/,
                         include: /node_modules|antd\.css/,
@@ -211,10 +212,7 @@ module.exports = {
                                 loader: require.resolve('css-loader'),
                                 options: {
                                     importLoaders: 1,
-                                    // 改动
-                                    // modules: true,   // 新增对css modules的支持
-                                    // localIdentName: '[name]__[local]__[hash:base64:5]', //
-                                },
+                                }
                             },
                             {
                                 loader: require.resolve('postcss-loader'),
@@ -238,7 +236,7 @@ module.exports = {
                             },
                         ],
                     },
-                    //@Lynn 这里我开启自己编写的less文件的css modules功能 除了node_modules库中的less
+                    //TODO @Lynn 这里我开启自己编写的less文件的css modules功能 除了node_modules库中的less
                     {
                         test: /\.less$/,
                         exclude: [/node_modules/],
