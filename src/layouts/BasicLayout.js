@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
 import SiderMenu from '../components/SiderMenu'
-import AsyncComponent from '../utils/AsyncLoad/AsyncComponent';
+// import AsyncComponent from '../utils/AsyncLoad/AsyncComponent';
 import Loadable from 'react-loadable';
 import MyLoadingComponent from '../utils/MyLoadingComponent';
 const TodoApp = Loadable({
