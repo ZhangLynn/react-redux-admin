@@ -35,6 +35,8 @@ module.exports = {
     entry: [
         // We ship a few polyfills by default:
         'react-hot-loader/patch',
+        'webpack-dev-server/client?http://localhost:3000/',
+        "webpack/hot/only-dev-server",
         require.resolve('./polyfills'),
         // Include an alternative client for WebpackDevServer. A client's job is to
         // connect to WebpackDevServer by a socket and get notified about changes.
