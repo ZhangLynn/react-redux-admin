@@ -2,8 +2,18 @@ import React, { Component } from 'react';
 import { Layout } from 'antd';
 import SiderMenu from '../components/SiderMenu'
 import AsyncComponent from '../utils/AsyncLoad/AsyncComponent';
-const TodoApp = AsyncComponent(() => import("../pages/todoapp"));
-const TableDemo = AsyncComponent(() => import("../testComponent/tableDemo"));
+import Loadable from 'react-loadable';
+import MyLoadingComponent from '../utils/MyLoadingComponent';
+const TodoApp = Loadable({
+    loader: () => import("../pages/todoapp"),
+    loading: MyLoadingComponent
+});
+const TableDemo = Loadable({
+    loader: () => import("../testComponent/tableDemo"),
+    loading: MyLoadingComponent
+});
+// const TodoApp = AsyncComponent(() => import("../pages/todoapp"));
+// const TableDemo = AsyncComponent(() => import("../testComponent/tableDemo"));
 import {
     Route,
     Switch
