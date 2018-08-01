@@ -11,7 +11,13 @@ import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 //路由的按需加载
 import AsyncComponent from './utils/AsyncLoad/AsyncComponent';
-const BasicLayout = AsyncComponent(() => import("./layouts/BasicLayout"));
+import Loadable from 'react-loadable';
+import MyLoadingComponent from './utils/MyLoadingComponent';
+const BasicLayout = Loadable({
+    loader: () => import("./layouts/BasicLayout"),
+    loading: MyLoadingComponent
+});
+// const BasicLayout = AsyncComponent(() => import("./layouts/BasicLayout"));
 const page404 = ()=>(
     <div>404</div>
 )
