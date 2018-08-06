@@ -12,19 +12,19 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
-// Webpack uses `publicPath` to determine where the app is being served from.
-// In development, we always serve from the root. This makes config easier.
+// Webpack 使用 `publicPath` 来确定从哪里启动应用程序
+// 在开发环境中, 我们总是从跟目录下开启服务, 这使配置更容易
 const publicPath = '/';
-// `publicUrl` is just like `publicPath`, but we will provide it to our app
-// as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
-// Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
+// `publicUrl`只是`publicPath`，但我们会将它提供给我们的应用程序
+// 作为JavaScript中的`index.html`和`process.env.PUBLIC_URL`中的％PUBLIC_URL％。
+// 省略尾随斜杠，因为％PUBLIC_PATH％/ xyz看起来比％PUBLIC_PATH％xyz好。
 const publicUrl = '';
-// Get environment variables to inject into our app.
+// 获取环境变量以注入我们的应用程序
 const env = getClientEnvironment(publicUrl);
 
-// This is the development configuration.
-// It is focused on developer experience and fast rebuilds.
-// The production configuration is different and lives in a separate file.
+// 这是开发配置.
+// 它专注于开发人员体验和快速重建.
+// 生产配置不同, 并且位于单独的文件中.
 module.exports = {
     // You may want 'eval' instead if you prefer to see the compiled output in DevTools.
     // See the discussion in https://github.com/facebookincubator/create-react-app/issues/343.
@@ -178,8 +178,8 @@ module.exports = {
                                     importLoaders: 1,
                                     // TODO  配置对css modules的支持
                                     // 如果不想开启CSS的module功能 注释下面一段代码即可
-                                    // modules: true,
-                                    localIdentName: '[name]__[local]__[hash:base64:5]', //
+                                    modules: true,
+                                    localIdentName: '[name]__[local]__[hash:base64:5]',
                                 },
                             },
                             {
@@ -249,7 +249,7 @@ module.exports = {
                                 loader: require.resolve('css-loader'),
                                 options: {
                                     modules: true,
-                                    localIndexName: "[name]__[local]___[hash:base64:5]"
+                                    localIndexName: "[name]__[local]-[hash:base64:5]"
                                 },
                             },
                             {
